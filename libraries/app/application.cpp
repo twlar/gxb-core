@@ -1003,8 +1003,9 @@ void application::initialize(const fc::path& data_dir, const boost::program_opti
    else
    {
       wanted.push_back("witness");
-      wanted.push_back("account_history");
+      //wanted.push_back("account_history");
       wanted.push_back("data_transaction");
+      wanted.push_back("elasticsearch");
    }
    for (auto& it : wanted)
    {
