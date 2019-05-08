@@ -1007,8 +1007,12 @@ void application::initialize(const fc::path& data_dir, const boost::program_opti
    }
 #endif
 #ifdef ELASTIC_SEARCH_PLUGIN_HPP
-   if (options.count("load-elastic-search-plugin-txid") && options.at("load-elastic-search-plugin").as<bool>()) {
-      wanted.push_back("elasticsearch");
+   if (options.count("load-elastic-search-plugin") && options.at("load-elastic-search-plugin").as<bool>()) {
+      auto ach_itor = std::find(wanted.begin(),wanted.end(),"account_history");
+      if(ach_itor != wanted.end()){
+         wanted.erase(ach_itor);
+         wanted.push_back("elasticsearch");
+      }
    }
 #endif
 >>>>>>> f2fa357... fix: fix cmakelists.txt
