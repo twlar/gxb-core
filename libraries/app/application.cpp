@@ -999,8 +999,6 @@ void application::initialize(const fc::path& data_dir, const boost::program_opti
       wanted.push_back("account_history");
       wanted.push_back("data_transaction");
    }
-<<<<<<< HEAD
-=======
 #ifdef QUERY_TXID_PLUGIN_HPP 
    if (options.count("load-query-txid-plugin") && options.at("load-query-txid-plugin").as<bool>()) {
       wanted.push_back("query_txid");
@@ -1015,7 +1013,6 @@ void application::initialize(const fc::path& data_dir, const boost::program_opti
       }
    }
 #endif
->>>>>>> f2fa357... fix: fix cmakelists.txt
    for (auto& it : wanted)
    {
       if (!it.empty()) enable_plugin(it);
